@@ -1,0 +1,14 @@
+[Unit]
+Description=Locomotive Controller Daemon
+After=multi-user.target
+
+[Service]
+Type=simple
+User=pi
+WorkingDirectory=/home/pi/lococtrl/controller
+ExecStart=python /home/pi/lococtrl/controller/system_menu.py
+KillSignal=SIGINT
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
